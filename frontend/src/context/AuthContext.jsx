@@ -10,7 +10,7 @@ export const AuthProvider = ({ children }) => {
     useEffect(() => {
       const getUser  = async () => {
         try {
-            const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/checkauth`, { withCredentials: true });
+            const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/auth/user`, { withCredentials: true });
             setUser(response.data.user); 
             setLoading(false);
         } catch (err) {

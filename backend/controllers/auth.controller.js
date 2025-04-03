@@ -1,4 +1,5 @@
 const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken");
 const User = require("../models/user.model.js");
 const generateAuthToken = require("../utils/generateAuthToken.js");
 
@@ -94,4 +95,21 @@ const logout = async (req, res) => {
     }
 }
 
-module.exports = { register, login, logout }
+const getCurrentUser = async (req, res) => {
+
+    const token = req.cookies.token;
+    if (!token) return res.status(200).json({ user: null });
+
+    try {
+        const decoded = jwt.verify(token, process.env.JWT_SECRET);
+        const user = await User.findById(decoded.id).select("-password");
+
+        if (!user) return res.status(200).json({ user: null });
+
+        return res.status(200).json({ user });
+    } catch (err) {
+        return res.status(200).json({ user: null });
+    }
+}   
+
+module.exports = { register, login, logout, getCurrentUser };

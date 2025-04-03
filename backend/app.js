@@ -41,10 +41,6 @@ app.use('/api/carrental', carRentalRoutes);
 app.use('/api/lostnfound', lostnFoundRoutes);
 app.use('/api/messages', messageRoutes);
 
-app.get('/api/checkauth', checkAuth, (req, res) => {
-    return res.status(200).json({ message: "Authorized", user: req.user });
-});
-
 app.get('/', (req, res) => {
     res.send("API Working");
 });
