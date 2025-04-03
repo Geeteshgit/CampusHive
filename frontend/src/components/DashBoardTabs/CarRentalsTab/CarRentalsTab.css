@@ -1,0 +1,86 @@
+#my-rental-tab {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+}
+
+#my-rental-tab h2 {
+    font-weight: 500;
+}
+
+#my-rental-tab .my-rental-cards {
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+}
+
+#my-rental-card {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 1em;
+    transition: 0.2s;
+}
+
+#my-rental-card:hover {
+    transform: scale(1.01);
+    transition: 0.2s;
+}
+
+#my-rental-card .my-rental-card-container {
+    display: flex;
+    align-items: center;
+    gap: 2em;
+}
+
+#my-rental-card .my-rental-info {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.5em;
+}
+
+#my-rental-card img {
+    width: 150px;
+    height: 150px;
+    border: 2px solid #F97316;
+    border-radius: 10px;
+}
+
+#my-rental-card button,
+#my-rental-card button i {
+    background-color: transparent;
+    color: #E63E3E;
+    font-size: 1.5rem;
+    border: none;
+    cursor: pointer;
+    padding: 0.5em;
+    border-radius: 10px;
+    transition: 0.2s;
+}
+
+#my-rental-card button:hover {
+    background-color: #2F1E1E;
+    transition: 0.2s;
+}
+
+@media (max-width: 625px) {
+    #my-rental-card {
+        flex-direction: column;
+        gap: 1em;
+    }
+
+    #my-rental-card .my-rental-card-container {
+        display: flex;
+        flex-direction: column;
+        gap: 2em;
+    }
+
+    #my-rental-card img {
+        width: 100%;
+        object-fit: cover;
+    }
+}

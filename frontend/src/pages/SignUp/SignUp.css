@@ -1,0 +1,164 @@
+#signup {
+    width: 100%;
+}
+
+.signup-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+    padding: 2em 0;
+}
+
+.signup-container h1 {
+    font-weight: 500;
+    font-size: 3rem;
+}
+
+.signup-container span {
+    color: #F97316;
+}
+
+.signup-container form {
+    position: relative;
+    width: 30%;
+    min-width: 450px;
+    background-color: #1A1A1A;
+    border-radius: 10px;
+    margin-top: 1em;
+    padding: 2em 1.5em;
+}
+
+.signup-container h2 {
+    font-weight: 500;
+}
+
+.signup-container .signup-text {
+    margin: 0.5em 0 2em 0;
+    font-size: 0.90rem;
+    font-weight: 400;
+    opacity: 0.6;
+}
+
+.signup-container form label {
+    font-size: 0.9rem;
+    font-weight: 500;
+    opacity: 0.9;
+}
+
+.signup-container form input[type = 'text'],
+.signup-container form input[type = 'email'],
+.signup-container form input[type = 'password'] {
+    width: 100%;
+    background-color: #222222;
+    outline: none;
+    border: 2px solid #383131;
+    border-radius: 8px;
+    font-size: 1rem;
+    padding: 0.70em;
+    margin-top: 0.5em;
+    margin-bottom: 1em;
+}
+
+.signup-container form input:focus {
+    border: 2px solid #F97316;
+}
+
+.signup-container i {
+    font-size: 1.50rem;
+    color: #757575;
+    position: absolute;
+    left: 30px;
+}
+
+.signup-container form button {
+    width: 100%;
+    background-color: #F97316;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    padding: 0.75em;
+    margin-top: 1em;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.signup-container form button:hover {
+    background-color: #FB923C;
+    transform: scale3d(1.02,1.02,1.02);
+    transition: 0.2s;
+}
+
+.signup-container a:hover {
+    text-decoration: underline;
+}
+
+.signup-container .login-route {
+    font-size: 0.90rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5em;
+    margin-top: 1em;
+}
+
+.signup-container .login-route a {
+    color: #F97316;
+    font-size: 0.95rem;
+}
+
+.signup-container p{
+    opacity: 0.6;
+    font-size: 0.95rem;
+}
+
+.signup-container .copyrights {
+    font-size: 0.80rem;
+    font-weight: 300;
+    opacity: 0.5;
+}
+
+@media (max-width: 625px) {
+    .signup-container h1 {
+        font-size: 2rem;
+    }
+
+    .signup-container form {
+        width: 85%;
+        min-width: auto;
+        padding: 1.5em;
+    }
+
+    .signup-container form input[type='text'],
+    .signup-container form input[type='email'],
+    .signup-container form input[type='password'] {
+        font-size: 0.90rem;
+        padding: 0.6em;
+    }
+
+    .signup-container form button {
+        font-size: 0.90rem;
+    }
+    
+    .signup-container h2 {
+        font-size: 1.5rem;
+    }
+
+    .signup-container .signup-text {
+        font-size: 0.85rem;
+    }
+
+    .signup-container form label {
+        font-size: 0.85rem;
+    }
+
+    .login-container .login-route a {
+        font-size: 0.85rem;
+    }
+    
+    .signup-container p{
+        font-size: 0.85rem;
+    }
+}

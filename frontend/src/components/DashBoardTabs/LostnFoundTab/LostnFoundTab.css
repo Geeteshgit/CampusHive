@@ -1,0 +1,87 @@
+#my-found-item-tab {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+}
+
+#my-found-item-tab h2 {
+    font-weight: 500;
+}
+
+#my-found-item-tab .my-found-item-cards {
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+}
+
+#my-found-item-card {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 1em;
+    transition: 0.2s;
+}
+
+#my-found-item-card:hover {
+    transform: scale(1.01);
+    transition: 0.2s;
+}
+
+#my-found-item-card .my-found-item-card-container {
+    display: flex;
+    align-items: center;
+    gap: 2em;
+}
+
+#my-found-item-card .my-item-info {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.5em;
+}
+
+#my-found-item-card img {
+    width: 150px;
+    height: 150px;
+    border: 2px solid #F97316;
+    border-radius: 10px;
+}
+
+#my-found-item-card button,
+#my-found-item-card button i {
+    background-color: transparent;
+    color: #E63E3E;
+    font-size: 1.5rem;
+    border: none;
+    cursor: pointer;
+    padding: 0.5em;
+    border-radius: 10px;
+    transition: 0.2s;
+}
+
+#my-found-item-card button:hover {
+    background-color: #2F1E1E;
+    transition: 0.2s;
+}
+
+@media (max-width: 625px) {
+    #my-found-item-card {
+        flex-direction: column;
+        gap: 1em;
+    }
+
+    #my-found-item-card .my-found-item-card-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1em;
+    }
+    
+    #my-found-item-card img {
+        width: 100%;
+        object-fit: cover;
+    }
+}

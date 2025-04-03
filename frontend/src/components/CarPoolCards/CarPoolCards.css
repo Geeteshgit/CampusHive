@@ -1,0 +1,82 @@
+#carpool-cards {
+    width: 100%;
+    background-color: #444444;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+#carpool-cards:hover {
+    transform: scale3d(1.02, 1.02, 1.02);
+    transition: 0.3s;
+}
+
+.carpool-user {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    padding: 1em;
+}
+
+.carpool-user i{
+    font-size: 1.25rem;
+    color: #F97316;
+    background-color: #684D3A;
+    padding: 0.5em;
+    border-radius: 8px;
+}
+
+.carpool-info {
+    background-color: #1A1A1A;
+    border-radius: 0 0 10px 10px;
+    padding: 1em;
+}
+
+.carpool-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.carpool-details i{
+    font-size: 1.25rem;
+    opacity: 0.75;
+}
+
+.carpool-data{
+    text-align: center;
+    font-size: 0.75rem;
+    font-weight: 300;
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 0.75em;
+    flex-wrap: wrap;
+}
+
+#carpool-cards button {
+    width: 100%;
+    background-color: #F97316;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 5px;
+    padding: 0.65em 1.5em;
+    margin-top: 1em;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+
+#carpool-cards button:hover {
+    background-color: #FB923C;
+    transform: scale3d(1.01, 1.01, 1.01);
+    transition: 0.2s;
+}

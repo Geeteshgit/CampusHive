@@ -1,0 +1,156 @@
+#login {
+    width: 100%;
+}
+
+.login-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+    padding: 2em 0;
+}
+
+.login-container h1 {
+    font-weight: 500;
+    font-size: 3rem;
+}
+
+.login-container span {
+    color: #F97316;
+}
+
+.login-container form {
+    position: relative;
+    width: 30%;
+    min-width: 450px;
+    background-color: #1A1A1A;
+    border-radius: 10px;
+    margin-top: 1em;
+    padding: 2em 1.5em;
+}
+
+.login-container h2 {
+    font-weight: 500;
+}
+
+.login-container .login-text {
+    margin: 0.5em 0 2em 0;
+    font-size: 0.90rem;
+    font-weight: 400;
+    opacity: 0.6;
+}
+
+.login-container form label {
+    font-size: 0.9rem;
+    font-weight: 500;
+    opacity: 0.9;
+}
+
+.login-container form input[type='email'],
+.login-container form input[type='password'] {
+    width: 100%;
+    background-color: #222222;
+    outline: none;
+    border: 2px solid #383131;
+    border-radius: 8px;
+    font-size: 1rem;
+    padding: 0.70em;
+    margin-top: 0.5em;
+    margin-bottom: 1em;
+}
+
+.login-container form input:focus {
+    border: 2px solid #F97316;
+}
+
+.login-container form button {
+    width: 100%;
+    background-color: #F97316;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    padding: 0.75em;
+    margin-top: 1em;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.login-container form button:hover {
+    background-color: #FB923C;
+    transform: scale3d(1.02, 1.02, 1.02);
+    transition: 0.2s;
+}
+
+.login-container a:hover {
+    text-decoration: underline;
+}
+
+.login-container .signup-route {
+    font-size: 0.90rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5em;
+    margin-top: 1em;
+}
+
+.login-container .signup-route a {
+    color: #F97316;
+    font-size: 0.95rem;
+}
+
+.login-container p {
+    opacity: 0.6;
+    font-size: 0.95rem;
+}
+
+.login-container .copyrights {
+    font-size: 0.80rem;
+    font-weight: 300;
+    opacity: 0.5;
+}
+
+@media (max-width: 625px) {
+    .login-container h1 {
+        font-size: 2rem;
+    }
+
+    .login-container form {
+        width: 85%;
+        min-width: auto;
+        padding: 1.5em;
+    }
+
+    .login-container form input[type='text'],
+    .login-container form input[type='email'],
+    .login-container form input[type='password'] {
+        font-size: 0.90rem;
+        padding: 0.6em;
+    }
+
+    .login-container form button {
+        font-size: 0.90rem;
+    }
+    
+    .login-container h2 {
+        font-size: 1.5rem;
+    }
+
+    .login-container .login-text {
+        font-size: 0.85rem;
+    }
+
+    .login-container form label {
+        font-size: 0.85rem;
+    }
+
+    .login-container .login-route a {
+        font-size: 0.85rem;
+    }
+    
+    .login-container p{
+        font-size: 0.85rem;
+    }
+}

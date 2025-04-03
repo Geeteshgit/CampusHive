@@ -1,0 +1,91 @@
+#lostnfound-card {
+    width: 100%;
+    background-color: #1A1A1A;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+#lostnfound-card:hover {
+    transform: scale3d(1.02, 1.02, 1.02);
+    transition: 0.3s;
+}
+
+.lostnfound-item-image {
+    width: 100%;
+}
+
+.lostnfound-item-image img {
+    height: 250px;
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+    object-fit: cover;
+}
+
+.lostnfound-item-details {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    padding: 1em;
+}
+
+.lostnfound-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.lostnfound-item h4 {
+    font-size: 1rem;
+    font-weight: 400;
+    border-radius: 5px;
+    padding: 0.25em 1em;
+}
+
+.lostnfound-item h4.lost {
+    color: #E63E3E;
+    background-color: #2F1E1E;
+}
+
+.lostnfound-item h4.found {
+    color: #4ADE80;
+    background-color: #1C3C28;
+}
+
+.lostnfound-item-details h3{
+    font-weight: 500;
+}
+
+.lostnfound-item-details p{
+    opacity: 0.75;
+    font-weight: 300;
+}
+
+.lostnfound-item-details .lostnfound-item-date {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+}
+
+.lostnfound-item-details button {
+    width: 100%;
+    background-color: #F97316;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 5px;
+    padding: 0.65em 1.5em;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.lostnfound-item-details button:hover {
+    background-color: #FB923C;
+    transform: scale3d(1.01, 1.01, 1.01);
+    transition: 0.2s;
+}

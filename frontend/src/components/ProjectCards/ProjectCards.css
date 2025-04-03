@@ -1,0 +1,84 @@
+#project-card {
+    width: 100%;
+    background-color: #1A1A1A;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+#project-card:hover {
+    transform: scale3d(1.03, 1.03, 1.03);
+    border: 1px solid #F973164D;
+    transition: 0.3s;
+}
+
+.projects-data {
+    padding: 1em;
+}
+
+.projects-data-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.projects-data-header h3 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #F97316;
+}
+
+.projects-data-date {
+    display: flex;
+    gap: 0.25em;
+    opacity: 0.8;
+}
+
+.projects-data-date p {
+    font-size: 1rem;
+    font-weight: 300;
+}
+
+.projects-content span {
+    font-size: 0.80rem;
+    opacity: 0.5;
+}
+
+.projects-content p {
+    font-size: 0.90rem;
+    font-weight: 400;
+    opacity: 0.85;
+    margin: 2em 0;
+}
+
+.projects-roles {
+    margin-bottom: 1em;
+}
+
+.projects-roles p {
+    margin: 0.5em 0;
+}
+
+#project-card button {
+    width: 100%;
+    background-color: #F97316;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 5px;
+    padding: 0.65em 1.5em;
+    margin-top: 2em;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+
+#project-card button:hover {
+    background-color: #FB923C;
+    transform: scale3d(1.01, 1.01, 1.01);
+    transition: 0.2s;
+}

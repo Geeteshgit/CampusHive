@@ -1,0 +1,79 @@
+#carpool-tab {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+}
+
+#carpool-tab h2 {
+    font-weight: 500;
+}
+
+#carpool-tab .carpool-cards {
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+}
+
+#ride-card {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 1em;
+    transition: 0.2s;
+}
+
+#ride-card:hover {
+    transform: scale(1.01);
+    transition: 0.2s;
+}
+
+#ride-card .ride-card-details {
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5em;
+}
+
+#ride-card .ride-card-details i {
+    font-size: 1.25rem;
+}
+
+#ride-card button,
+#ride-card button i {
+    background-color: transparent;
+    color: #E63E3E;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    padding: 0.5em;
+    border-radius: 10px;
+    transition: 0.2s;
+}
+
+#ride-card button:hover {
+    background-color: #2F1E1E;
+    transition: 0.2s;
+}
+
+@media (max-width: 625px) {
+    #ride-card {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2em;
+    }
+
+    #ride-card .ride-card-details {
+        width: 100%;
+        text-align: center;
+    }
+
+    #ride-card button {
+        grid-column: span 2;
+        justify-self: center;
+        width: 100%;
+    }
+}

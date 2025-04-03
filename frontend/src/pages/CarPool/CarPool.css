@@ -1,0 +1,107 @@
+#carpool-rides {
+    height: 88vh;
+    width: 82%;
+    padding: 2em 1.5em;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+#carpool-rides h1 {
+    font-size: 2.5rem;
+    font-weight: 400;
+}
+
+#carpool-rides h2 {
+    font-size: 1.25rem;
+    font-weight: 400;
+}
+
+#carpool-header-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.carpool-search {
+    width: 100%;
+    position: relative;
+}
+
+.carpool-search input[type='text'] {
+    width: 100%;
+    font-size: 1rem;
+    padding: 0.75em 0 0.75em 2em;
+    background-color: #1A1A1A;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    outline: none;
+}
+
+.carpool-search .search {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    opacity: 0.3;
+}
+
+
+#carpool-header-container button{
+    background-color: #F97316;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.25em;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 0.65em 1em;
+    border: none;
+    border-radius: 5px;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+#carpool-header-container button:hover {
+    background-color: #FB923C;
+    transform: scale3d(1.02, 1.02, 1.02);
+    transition: 0.2s;
+}
+
+#carpool-container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2em;
+}
+
+@media (max-width: 1024px) {
+    #carpool-rides {
+        width: 100%;
+    }
+
+    #carpool-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 625px) {
+    #carpool-rides h1 {
+        font-size: 2rem;
+    }
+
+    #carpool-rides h2 {
+        font-size: 1.15rem;
+    }
+    
+    #carpool-header-container button{
+        font-size: 0.90rem;
+    }
+
+    #carpool-container {
+        grid-template-columns: 1fr;
+    }
+}
