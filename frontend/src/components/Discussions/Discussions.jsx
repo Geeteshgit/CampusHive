@@ -31,6 +31,7 @@ const Discussions = () => {
         initSocket();
         connectSocket();
         const socket = getSocket();
+        socket.emit("join", user._id);
         getPublicMessages();
 
         socket.on('receiveMessage', (msg) => {
@@ -40,20 +41,12 @@ const Discussions = () => {
         socket.on("onlineUsers", (onlineUsers) => {
             setOnlineCount(onlineUsers.length);
         })
-
+        
         return () => {
             socket.off("receiveMessage");
             socket.off("onlineUsers");
         }
     }, []);
-
-    useEffect(() => {
-        if (user) {
-            const socket = getSocket();
-            socket.emit("join", user._id);
-        }
-    }, [])
-
 
     useEffect(() => {
         messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });

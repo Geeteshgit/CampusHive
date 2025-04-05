@@ -61,8 +61,8 @@ const Login = () => {
         { credential: credentialResponse.credential },
         { withCredentials: true }
       );
+      const user = response.data.user;
       if(user) {
-        const user = response.data.user;
         setUser(user);  
         initSocket();
         connectSocket();
