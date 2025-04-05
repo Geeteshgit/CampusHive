@@ -6,8 +6,6 @@ const path = require("path");
 const helmet = require("helmet");
 const compression = require("compression");
 const connectToDB = require("./config/db.js");
-
-const checkAuth = require("./middlewares/checkAuth.js");
 const errorHandler = require("./middlewares/errorHandler.js");
 
 // Import Routes
@@ -23,6 +21,7 @@ const app = express();
 connectToDB();
 
 // Middleware 
+
 app.use(cors({ origin: process.env.CLIENT_URL, credentials: true }));
 app.use(helmet());
 app.use(compression());
