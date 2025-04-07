@@ -16,8 +16,8 @@ const SideBar = ({ showSidebar, toggleSidebar }) => {
          {} , { withCredentials : true });
       if(response.status === 200) {
         disconnectSocket();
-        navigate('/');
         setUser(null);
+        navigate('/');
       } 
     } catch (err) {
       alert(err.response?.data.message || "Something went wrong!")

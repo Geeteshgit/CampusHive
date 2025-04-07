@@ -2,8 +2,6 @@ const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const User = require("../models/user.model.js");
 const generateAuthToken = require("../utils/generateAuthToken.js");
-const { OAuth2Client } = require("google-auth-library");
-const client = new OAuth2Client(process.env.GOOGLE_CLIENT_ID);
 
 const register = async (req, res) => {
     try {
@@ -114,39 +112,4 @@ const getCurrentUser = async (req, res) => {
     }
 }   
 
-const googleLogin = async (req, res) => {
-    try {
-        const { credential } = req.body;
-
-        const ticket = await client.verifyIdToken({
-            idToken: credential,
-            audience: process.env.GOOGLE_CLIENT_ID,
-        });
-
-        const payload = ticket.getPayload();
-        const { email, name, picture } = payload;
-        let user = await User.findOne({ email });
-
-        if(!user) {
-            user = await User.create({
-                username: name,
-                email,
-                password: email + process.env.GOOGLE_CLIENT_SECRET,
-                profilePhoto: picture,
-            }); 
-        }
-        const token = generateAuthToken(user._id);
-        res.cookie("token", token, {
-            httpOnly: true,
-            secure: true,
-            sameSite: "None",
-            path: "/",
-        });
-        return res.status(200).json(user);
-    } catch (err) {
-        console.error("Google Login Error:", err.message);
-        return res.status(500).json({ message: "Google login failed" });   
-    }
-}
-
-module.exports = { register, login, logout, getCurrentUser, googleLogin };
+module.exports = { register, login, logout, getCurrentUser };

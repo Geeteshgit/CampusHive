@@ -41,8 +41,6 @@ const SignUp = () => {
                     autoClose: 2000,
                     theme: "dark",
                   });
-          const socket = getSocket();
-          socket.emit("join", user._id);
           navigate('/home');
         }
     } catch (err) {

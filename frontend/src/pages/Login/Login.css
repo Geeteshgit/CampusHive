@@ -112,17 +112,6 @@
     opacity: 0.5;
 }
 
-.google-login {
-    overflow: hidden;
-    border-radius: 10px;
-    transition: 0.2s;    
-}
-
-.google-login:hover {
-    transform: scale(1.02);
-    transition: 0.2s;
-}
-
 @media (max-width: 625px) {
     .login-container h1 {
         font-size: 2rem;
