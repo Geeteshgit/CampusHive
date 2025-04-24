@@ -3,8 +3,9 @@ import { Link, useNavigate } from "react-router-dom"
 import { toast } from 'react-toastify';
 import axios from "axios"
 import './SignUp.css'
-import { initSocket, connectSocket, getSocket } from '../../socket'
+import { initSocket, connectSocket } from '../../socket'
 import { useAuth } from '../../context/AuthContext'
+import { GoogleLogin } from '@react-oauth/google';
 
 const SignUp = () => {
 
@@ -48,7 +49,7 @@ const SignUp = () => {
         position: "top-right",
         autoClose: 2000,
         theme: "dark",
-        });
+      });
     }
 
     setSignUpData({
@@ -57,6 +58,35 @@ const SignUp = () => {
       password: "",
       confirmPassword: ""
     });
+  }
+
+  const handleGoogleSignup = async (credentialResponse) => {
+    try {
+      const response = await axios.post(`${import.meta.env.VITE_API_URL}/api/auth/google`,
+        {
+          credential: credentialResponse.credential,
+        },
+        { withCredentials: true }
+      );
+      
+      if (response.status === 200) {
+        toast.info(`Welcome ${response.data.user.username} !`, {
+          position: "top-right",
+          autoClose: 1500,
+          pauseOnHover: false,
+          theme: "dark",
+        });
+        setUser(response.data.user);
+        navigate("/home");
+      }
+    } catch (err) {
+      toast.error(err.response?.data.message || "Google Signup Failed", {
+        position: "top-right",
+        autoClose: 1500,
+        pauseOnHover: false,
+        theme: "dark",
+      });
+    }
   }
 
   return (
@@ -98,6 +128,21 @@ const SignUp = () => {
                   onChange={changeHandler}
                 />
                 <button>Create Account</button>
+                <p className='google-or'>OR</p>
+                <div className="google-signup">
+                <GoogleLogin
+                  onSuccess={credentialResponse => {
+                    handleGoogleSignup(credentialResponse);
+                  }}
+                  onError={() => {
+                    toast.warn(`${err.response?.data.message || "Something went wrong"}`, {
+                      position: "top-right",
+                      autoClose: 2000,
+                      theme: "dark",
+                    });
+                  }}
+                  />
+                </div>
                 <div className="login-route">
                     <p>Already Have An Account?</p>
                     <Link to='/login'>Login</Link>

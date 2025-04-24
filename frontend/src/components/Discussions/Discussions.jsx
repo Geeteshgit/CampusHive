@@ -132,9 +132,11 @@ const Discussions = () => {
                     {messages.map((msg) => (
                         <div className={`public-msg-card ${msg.senderId?._id === user._id ? "own-message" : ""}`}
                             key={msg._id}>
-                            <img src={`${VITE_API_URL}/uploads/${msg.senderId?.profilePhoto}`}
+                            <img 
+                                src={`${msg.senderId?.profilePhoto}`}
                                 alt="user-image"
                                 crossOrigin='anonymous'
+                                onError={(e) => e.target.src ='./user.jpg'}
                             />
                             <div className='public-msg-bubble'>
                                 {msg.file && (
@@ -147,10 +149,13 @@ const Discussions = () => {
                                                 <a href={`${VITE_API_URL}/uploads/${msg.file}`}
                                                     target='_blank'
                                                     rel='noreferrer'
-                                                ><img src={`${VITE_API_URL}/uploads/${msg.file}`}
+                                                ><img 
+                                                    src={`${VITE_API_URL}/uploads/${msg.file}`}
                                                     alt='uploaded-img'
                                                     className='public-msg-image'
-                                                    crossOrigin='anonymous' />
+                                                    crossOrigin='anonymous' 
+                                                    onError={(e) => e.target.src = './default.jpg'}
+                                                />
                                                 </a>
                                             ) : (
                                                 <a href={`${VITE_API_URL}/uploads/${msg.file}`}

@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import './ReportLostItem.css'
 import axios from 'axios'
 
-const ReportLostItem = () => {
+const ReportLostItem = ({ setIsOpen, setLostItems }) => {
 
     const [previewURL, setPreviewURL] = useState(null);
     const [lostItemData, setLostItemData] = useState({
@@ -41,6 +41,8 @@ const ReportLostItem = () => {
                 { withCredentials : true,
                 headers : { 'Content-Type' : 'multipart/form-data' } 
             });
+            setLostItems(prev => [...prev, response.data]);
+            setIsOpen(false);
         } catch (err) {
             alert(err.response?.data.message || "Something went wrong");
         }

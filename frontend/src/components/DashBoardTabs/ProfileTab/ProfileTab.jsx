@@ -139,9 +139,17 @@ const ProfileTab = () => {
                     <div className='profile-tab-profile-pic'>
                         <label htmlFor='profile-pic'>
                             {profileData.preview ? (
-                                <img src={profileData.preview} alt="profile-pic" crossOrigin="anonymous" />
+                                <img src={profileData.preview} 
+                                    alt="profile-pic" 
+                                    crossOrigin="anonymous" 
+                                />
                             ) : profileData.image ? (
-                                <img src={`${VITE_API_URL}/uploads/${profileData.image}`} alt="profile-pic" crossOrigin="anonymous" />
+                                <img 
+                                    src={`${profileData.image}`} 
+                                    alt="profile-pic" 
+                                    crossOrigin="anonymous"
+                                    onError={(e) => e.target.src = './user.jpg'} 
+                                />
                             ) : (
                                 <div style={{ width: '100px', height: '100px', backgroundColor: '#ddd', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                                     No Image

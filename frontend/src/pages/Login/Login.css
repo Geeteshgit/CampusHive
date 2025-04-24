@@ -22,6 +22,8 @@
 
 .login-container form {
     position: relative;
+    display: flex;
+    flex-direction: column;
     width: 30%;
     min-width: 450px;
     background-color: #1A1A1A;
@@ -72,7 +74,7 @@
     border-radius: 10px;
     font-size: 1rem;
     padding: 0.75em;
-    margin: 1em 0;
+    margin-top: 1em;
     cursor: pointer;
     transition: 0.2s;
 }
@@ -81,6 +83,10 @@
     background-color: #FB923C;
     transform: scale(1.02);
     transition: 0.2s;
+}
+
+.login-container .google-or-login {
+    align-self: center;
 }
 
 .login-container a:hover {

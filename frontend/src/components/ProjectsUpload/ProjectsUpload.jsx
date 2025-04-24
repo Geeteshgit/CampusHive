@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import './ProjectsUpload.css'
 import axios from 'axios'
 
-const ProjectsUpload = () => {
+const ProjectsUpload = ({ setIsOpen, setProjects }) => {
 
   const [projectData, setProjectData] = useState({
     title : "",
@@ -25,16 +25,18 @@ const ProjectsUpload = () => {
         const response = await axios.post(`${import.meta.env.VITE_API_URL}/api/project`,
           projectData , 
           { withCredentials : true });
+          setProjects(prev => [...prev, response.data]);
+          setIsOpen(false);
     } catch (err) {
         alert(err.response?.data.message || "Something went wrong");
     }
-
     setProjectData({
       title : "",
       description : "",
       technologies : "",
       lookingFor : "",
     });
+
   }
 
   return (

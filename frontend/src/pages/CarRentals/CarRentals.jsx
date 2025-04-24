@@ -45,13 +45,14 @@ const CarRentals = () => {
               {isOpen ? 'Cancel' : 'Add Vehicle'}
             </button>
           </div>
-          {isOpen && <CarRentalUpload />}
+          {isOpen && <CarRentalUpload setIsOpen={setIsOpen} setCarRentals={setCarRentals} />}
           <h2>Vehicles Available for Rent</h2>
           <div id='carrentals-container'>
             {sortedRentals.map((vehicle) => {
               return <CarRentalCards
                 key={vehicle._id}
                 user={vehicle.user?._id}
+                username={vehicle.user?.username}
                 image={vehicle.vehicleImage}
                 model={vehicle.vehicleModel}
                 description={vehicle.vehicleDescription}

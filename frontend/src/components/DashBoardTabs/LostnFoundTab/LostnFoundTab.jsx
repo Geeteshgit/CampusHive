@@ -40,9 +40,11 @@ const LostnFoundTab = () => {
           return <div id='my-found-item-card' key={item._id}>
               <div className='my-found-item-card-container'>
                 <div className='my-item-image'>
-                  <img src={`${VITE_API_URL}/uploads/${item.itemImage}`} 
+                  <img 
+                    src={`${VITE_API_URL}/uploads/${item.itemImage}`} 
                     alt="item-image" 
-                    crossOrigin='anonymous'  
+                    crossOrigin='anonymous'
+                    onError={(e) => e.target.src ='./default.jpg'}  
                   />
                 </div>
                 <div className="my-item-info">

@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import './CarRentalUpload.css'
 import axios from 'axios'
 
-const CarRentalUpload = () => {
+const CarRentalUpload = ({ setIsOpen, setCarRentals }) => {
 
     const [previewURL, setPreviewURL] = useState(null);
 
@@ -45,8 +45,10 @@ const CarRentalUpload = () => {
             const response = await axios.post(`${import.meta.env.VITE_API_URL}/api/carrental`,
                 formData, 
                 { withCredentials : true,
-                headers : { 'Content-Type' : 'multipart/form-data' }     
+                    headers : { 'Content-Type' : 'multipart/form-data' }     
             });
+            setCarRentals(prev => [...prev, response.data]);
+            setIsOpen(false);
         } catch (err) {
             alert(err.response?.data.message || "Something went wrong");
         }

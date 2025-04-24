@@ -16,9 +16,10 @@ const Header = ({ toggleSidebar }) => {
       <div id='header-container'>
           <NavLink to='/dashboard'>
             <div id='avatar'>
-                <img src={`${import.meta.env.VITE_API_URL}/uploads/${user.profilePhoto}`} 
+                <img src={`${user.profilePhoto}`} 
                   alt="profile-pic" 
                   crossOrigin="anonymous"
+                  onError={(e) => e.target.src = './user.jpg'}
                 />
             </div>
           </NavLink>

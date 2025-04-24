@@ -1,5 +1,5 @@
 #lost-item-report {
-    width: 50%;
+    width: 100%;
     background-color: #333333;
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 10px;
@@ -87,17 +87,5 @@
     width: 18px;
     height: 18px;
     cursor: pointer;
-}
-
-@media (max-width: 1024px) {
-    #lost-item-report {
-        width: 70%;
-    }
-}
-
-@media (max-width: 625px) {
-    #lost-item-report {
-        width: 100%;
-    }
 }
 

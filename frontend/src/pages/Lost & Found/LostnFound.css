@@ -12,11 +12,12 @@
 #lostnfound h1 {
     font-size: 2.5rem;
     font-weight: 400;
+    margin-bottom: 0.25em;
 }
 
-#lostnfound h2 {
-    font-size: 1.25rem;
-    font-weight: 400;
+#lostnfound p {
+    font-weight: 300;
+    opacity: 0.8;
 }
 
 #lostnfound-header-container {
@@ -76,6 +77,39 @@
     gap: 2em;
 }
 
+#lostnfound .lostnfound-filter {
+    width: 100%;
+    background-color: #1A1A1A;
+    display: flex;
+    gap: 0.10em;
+    border-radius: 5px;
+    margin: 1em 0;
+    padding: 0.25em;
+}
+
+#lostnfound .lostnfound-filter button {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 0.5em;
+    background-color: transparent;
+    font-size: 1rem;
+    font-weight: 400;
+    border: none;
+    border-radius: 5px;
+    padding: 0.5em 1em;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+#lostnfound .lostnfound-filter button.active {
+    background-color: #333333;
+}
+
+#lostnfound .lostnfound-filter button:hover {
+    background-color: #424242;
+    transition: 0.2s;
+}
 
 @media (max-width: 1024px) {
     #lostnfound {

@@ -27,5 +27,7 @@ const carPoolSchema = new mongoose.Schema({
     timestamps : true
 });
 
+carPoolSchema.index({ createdAt: 1 }, { expireAfterSeconds: 86400 });
+
 const CarPool = mongoose.model('CarPool', carPoolSchema);
 module.exports = CarPool;

@@ -55,7 +55,7 @@ const CarPool = () => {
               {isOpen ? "Cancel" : "Offer A Ride"}
             </button>
           </div>
-          {isOpen && <RequestCarPool />}
+          {isOpen && <RequestCarPool setIsOpen={setIsOpen} setRides={setRides} />}
           <h2>Available Rides</h2>
           <div className='carpool-search'>
             <i className="ri-search-line search"></i>

@@ -60,7 +60,7 @@ const Projects = () => {
                     {isOpen ? 'Cancel' : 'Add Project'}
                 </button>
             </div>
-            {isOpen && <ProjectsUpload />}
+            {isOpen && <ProjectsUpload setIsOpen={setIsOpen} setProjects={setProjects} />}
             <div className='projects-search'>
                 <i className="ri-search-line search"></i>
                 <input 

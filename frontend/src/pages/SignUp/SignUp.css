@@ -22,6 +22,8 @@
 
 .signup-container form {
     position: relative;
+    display: flex;
+    flex-direction: column;
     width: 30%;
     min-width: 450px;
     background-color: #1A1A1A;
@@ -118,6 +120,15 @@
     font-size: 0.80rem;
     font-weight: 300;
     opacity: 0.5;
+}
+
+.google-or{
+    align-self: center;
+    margin: 0.5em 0;
+}
+
+.google-signup {
+    align-self: center;
 }
 
 @media (max-width: 625px) {

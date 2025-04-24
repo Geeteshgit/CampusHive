@@ -51,9 +51,11 @@ const Contacts = ({ onSelectUser, currentUser, onlineUsers, selectedUser, contac
               onClick={() => {onSelectUser(otherUser); setContactsOpen(false)}}>
               <div className="user-image">
                 {otherUser?.profilePhoto ? (
-                  <img src={`${VITE_API_URL}/uploads/${otherUser.profilePhoto}`}
+                  <img 
+                    src={`${otherUser.profilePhoto}`}
                     alt="profile"
                     crossOrigin="anonymous"
+                    onError={(e) => e.target.src = './user.jpg'}
                   />
                 ) : (
                   <div>Image</div>

@@ -40,9 +40,11 @@ const CarRentalsTab = () => {
           return <div id='my-rental-card' key={rental._id}>
               <div className='my-rental-card-container'>
                 <div className='my-rental-image'>
-                  <img src={`${VITE_API_URL}/uploads/${rental.vehicleImage}`} 
+                  <img 
+                    src={`${VITE_API_URL}/uploads/${rental.vehicleImage}`} 
                     alt="vehicle-image" 
-                    crossOrigin='anonymous'  
+                    crossOrigin='anonymous'
+                    onError={(e) => e.target.src ='./default.jpg'}  
                   />
                 </div>
                 <div className="my-rental-info">

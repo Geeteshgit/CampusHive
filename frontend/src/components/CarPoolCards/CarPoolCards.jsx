@@ -1,6 +1,7 @@
 import React from 'react'
 import './CarPoolCards.css'
 import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../../context/AuthContext'
 
 const CarPoolCards = (props) => {
 
@@ -8,12 +9,13 @@ const CarPoolCards = (props) => {
     const clickHandler = (user) => {
         navigate(`/messages/${user}`);
     }
+    const { user } = useAuth();
 
   return (
     <div id='carpool-cards'>
         <div className='carpool-user'>
             <i className="ri-taxi-line taxi-icon"></i>
-            <h3>{props.username}</h3>
+            <h3>{props.username ? props.username : user?.username}</h3>
         </div>
         <div className='carpool-info'>
             <div className="carpool-details">

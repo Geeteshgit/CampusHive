@@ -14,9 +14,11 @@ const LostnFoundCards = (props) => {
   return (
     <div id='lostnfound-card'>
         <div className='lostnfound-item-image'>
-            <img src={`${VITE_API_URL}/uploads/${props.image}`} 
+            <img 
+                src={`${VITE_API_URL}/uploads/${props.image}`} 
                 alt="found-item" 
                 crossOrigin='anonymous'
+                onError={(e) => e.target.src = './default.jpg'}
             />
         </div>
         <div className='lostnfound-item-info'>
@@ -27,7 +29,7 @@ const LostnFoundCards = (props) => {
                 </div>
                 <p>{props.description}</p>
                 <div className='lostnfound-item-date'>
-                    <span>Date :</span>
+                    <span>Reported On :</span>
                     <p>{props.foundDate}</p>
                 </div>
                 <button onClick={() => clickHandler(props.user)}>Contact</button>

@@ -133,9 +133,12 @@ const Chat = ({ selectedUser, currentUser }) => {
             <div className="chat-header">
                 <div className="selected-user-img">
                     {selectedUser ? (
-                        <img src={`${VITE_API_URL}/uploads/${selectedUser?.profilePhoto}`}
+                        <img 
+                            src={`${selectedUser?.profilePhoto}`}
                             alt="profile-photo"
-                            crossOrigin="anonymous" />
+                            crossOrigin="anonymous" 
+                            onError={(e) => e.target.src = './user.jpg'}    
+                        />
                     ) : (
                         <h3>Select A User To Start Conversation!</h3>
                     )}
@@ -156,20 +159,21 @@ const Chat = ({ selectedUser, currentUser }) => {
                     return (
                         <div className={`dm-msg-card ${isSender ? "own-message" : ""}`}
                             key={msg._id} >
-                            <img src={`${VITE_API_URL}/uploads/${msg.senderId?.profilePhoto}`}
-                                alt="user"
-                                crossOrigin="anonymous" />
                             <div className="dm-msg-bubble">
                                 {msg.file && (
                                     <div className="dm-msg-file-preview">
                                         {isImage ? (
                                             <a href={`${VITE_API_URL}/uploads/${msg.file}`}
                                                 target="_blank"
-                                                rel="noreferrer" >
-                                                <img src={`${VITE_API_URL}/uploads/${msg.file}`}
+                                                rel="noreferrer" 
+                                            >
+                                                <img 
+                                                    src={`${VITE_API_URL}/uploads/${msg.file}`}
                                                     alt="uploaded-img"
                                                     className="dm-msg-image"
-                                                    crossOrigin="anonymous" />
+                                                    crossOrigin="anonymous" 
+                                                    onError={(e) => e.target.src = './default.jpg'}    
+                                                />
                                             </a>
                                         ) : (
                                             <a href={`${VITE_API_URL}/uploads/${msg.file}`}
@@ -198,7 +202,7 @@ const Chat = ({ selectedUser, currentUser }) => {
                 {previewURL && <img src={previewURL} alt="preview" className='preview-image' />}
             </div>
             <div className="chat-inputs">
-                <form action="" onSubmit={submitHandler}>
+                <form onSubmit={submitHandler}>
                     <label htmlFor="input-file">
                         <i className="ri-attachment-line attachment"></i>
                     </label>

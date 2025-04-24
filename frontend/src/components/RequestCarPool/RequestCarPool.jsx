@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import axios from 'axios'
 import './RequestCarPool.css'
 
-const RequestCarPool = () => {
+const RequestCarPool = ({ setIsOpen, setRides }) => {
 
     const [carPoolData, setCarPoolData] = useState({
         pickupPoint : "",
@@ -24,10 +24,11 @@ const RequestCarPool = () => {
             const response = await axios.post(`${import.meta.env.VITE_API_URL}/api/carpool`, 
                 carPoolData, 
                 { withCredentials : true });
+            setRides(prev => [...prev, response.data]);
+            setIsOpen(false);
         } catch (err) {
             alert(err.response?.data.message || "Something went wrong");
         }
-
         setCarPoolData({
             pickupPoint : "",
             destinationPoint :"",
@@ -40,8 +41,8 @@ const RequestCarPool = () => {
     <>
     <main id='carpool-request'>
         <h2>Offer A Carpool Ride</h2>
-        <div className="carpool-request-container">
-            <form action="" onSubmit={submitHandler}>
+        <form onSubmit={submitHandler}>
+            <div className='carpool-input-group'>
                 <input 
                     type="text" 
                     placeholder='Pickup Point' 
@@ -56,6 +57,8 @@ const RequestCarPool = () => {
                     value={carPoolData.destinationPoint} 
                     onChange={changeHandler}
                 />
+            </div>
+            <div className='carpool-input-group'>
                 <input 
                     type="text" 
                     placeholder='Pickup Time' 
@@ -71,12 +74,12 @@ const RequestCarPool = () => {
                     name='requiredPeople'
                     value={carPoolData.requiredPeople} 
                     onChange={changeHandler}
-                />
-                <div className="carpool-button-container">
-                    <button>Post Ride</button>
-                </div>
-            </form>
-        </div>
+                    />
+            </div>
+            <div className="carpool-button-container">
+                <button>Post Ride</button>
+            </div>
+        </form>
     </main>
     </>
   )

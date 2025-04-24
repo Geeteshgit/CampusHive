@@ -6,7 +6,7 @@ const path = require('path');
 const getAllRentals = async (req, res) => {
     try {
         const rentals = await CarRental.find()
-        .populate('user', '_id');
+        .populate('user', '_id username');
         return res.status(200).json(rentals);
     } catch (err) {
         console.error("Get All Rentals Error:", err.message);

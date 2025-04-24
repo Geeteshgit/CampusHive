@@ -22,6 +22,7 @@
 
 .carrental-car-image {
     width: 100%;
+    overflow: hidden;
 }
 
 .carrental-car-image img {
@@ -29,11 +30,29 @@
     object-fit: cover;
     width: 100%;
     border-radius: 10px 10px 0 0;
+    transition: 0.3s;
 }
 
 .carrental-vehicle {
     display: flex;
     justify-content: space-between;
+}
+
+.carrental-user {
+    display: flex;
+    align-self: flex-start;
+    align-items: center;
+    gap: 0.25em;
+    background-color: #1A1A1A;
+    border: 1px solid gray;
+    border-radius: 50px;
+    padding: 0.25em 1em;
+}
+
+.carrental-user h4, 
+.carrental-user i {
+    font-size: 1rem;
+    font-weight: 400;
 }
 
 .carrental-car-details {
@@ -65,7 +84,7 @@
     background-color: #472C19;
     color: #F97316;
     font-weight: 600;
-    border: 1px solid #F973164D ;
+    border: 1px solid #F973164D;
     border-radius: 50px;
     padding: 0.25em 1em;
 }
