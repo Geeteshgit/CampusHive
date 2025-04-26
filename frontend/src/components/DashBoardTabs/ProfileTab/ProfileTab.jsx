@@ -151,9 +151,11 @@ const ProfileTab = () => {
                                     onError={(e) => e.target.src = './user.jpg'} 
                                 />
                             ) : (
-                                <div style={{ width: '100px', height: '100px', backgroundColor: '#ddd', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                                    No Image
-                                </div>
+                                <img 
+                                    src='./user.jpg' 
+                                    alt="profile-image" 
+                                    crossOrigin='anonymous'
+                                />
                             )}
                         </label>
                         <input
