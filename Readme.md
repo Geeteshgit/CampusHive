@@ -19,7 +19,7 @@ React.js, Node.js, Express.js, MongoDB, CSS3, Socket.IO, JWT, Google OAuth
 
 1. **Clone the repo**
    ```bash
-   git clone https://github.com/Geeteshgit/.git
+   git clone https://github.com/Geeteshgit/campushive.git
    cd campushive
 
 2. **Backend Setup**
